@@ -16,7 +16,9 @@ public class VanController : MonoBehaviour
 	private Rigidbody carRigidbody;
 	private float steerAngle = 0f;
 	private AudioSource audioSource;
-	public GameObject player,drivingPlayer;
+	[SerializeField]
+	private Transform playerSocket;
+	public GameObject player;
 	
 	private void Start()
 	{
@@ -41,9 +43,13 @@ public class VanController : MonoBehaviour
 		yield return new WaitForSeconds(vanAnimator.GetCurrentAnimatorStateInfo(0).length);
 
 		//player.GetComponent<DrivingPlayer>().SetDrivingPlayer(start);
+        player.transform.parent = playerSocket;
+        player.transform.localPosition = new Vector3(0,0.85f,0);
+        player.transform.localEulerAngles = new Vector3(0,90f,0);
 		vanAnimator.SetTrigger("Close");
 
 	}
+
 
 	private void FixedUpdate()
 	{
