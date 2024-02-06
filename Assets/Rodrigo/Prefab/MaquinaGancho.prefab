@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &577764760666021395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 577764760666021394}
+  m_Layer: 0
+  m_Name: MaquinaGancho
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &577764760666021394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577764760666021395}
+  m_LocalRotation: {x: -0, y: 0.0000004768371, z: -0, w: 1}
+  m_LocalPosition: {x: 14.159, y: 2.25, z: -8.458}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2800698944525227340}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &577764762267157981
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 577764760666021394}
+    m_Modifications:
+    - target: {fileID: 1301935246, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: FuerzaGancho
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625829117, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: Premios
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122346755, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: Interactor
+      objectReference: {fileID: 0}
+    - target: {fileID: 26756952543433758, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: Particulas
+      objectReference: {fileID: 0}
+    - target: {fileID: 677702917367281749, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: Feedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 984094193647085265, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: MaquinaGancho
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052461286812265149, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: Feedback
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866381915434734766, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: Interior
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931528629443882826, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: Controladores
+      objectReference: {fileID: 0}
+    - target: {fileID: 2721220165603302358, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: Gancho
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.28799954
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.4070003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834364120108964773, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: Visuals
+      objectReference: {fileID: 0}
+    - target: {fileID: 4815827013123681576, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: PuertaPremios
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024574944816828909, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: Joystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038670780984785577, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038670780984785577, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104376953885374868, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: PuertaPremios
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650257522284272077, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_Name
+      value: Boton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768138410289284921, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6028318826156562381, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+    - {fileID: 1571726173453621041, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+    - {fileID: 4683382065023697076, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+    - {fileID: 6028318825138695047, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+    - {fileID: 4885160160729312942, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+    - {fileID: 3068554993488609297, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+    - {fileID: 3068554993127982878, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+    - {fileID: 6028318824523339909, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+    - {fileID: 3068554992610662801, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+    - {fileID: 4885160162016524021, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+--- !u!4 &2800698944525227340 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3376210039400353937, guid: c20ce57c53543934a8ea4b804db7829d, type: 3}
+  m_PrefabInstance: {fileID: 577764762267157981}
+  m_PrefabAsset: {fileID: 0}
