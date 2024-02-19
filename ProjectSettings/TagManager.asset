@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Anchor
+  - Ball
+  - Projectile
+  - TeleportFloor
   layers:
   - Default
   - TransparentFX
