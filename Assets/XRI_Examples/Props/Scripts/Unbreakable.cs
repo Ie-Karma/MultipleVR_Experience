@@ -12,6 +12,7 @@ namespace UnityEngine.XR.Content.Interaction
         [Serializable] public class RestoreEvent : UnityEvent<GameObject> { }
         
         public Transform Parent;
+        public MataCerdos mataCerdos;
 
         [SerializeField]
         [Tooltip("How long to wait before rewinding the object's motion.")]
@@ -96,6 +97,7 @@ namespace UnityEngine.XR.Content.Interaction
                     m_Restored = true;
                     var restoredVersion = Instantiate(m_RestoredVersion, transform.position, transform.rotation, Parent);
                     restoredVersion.GetComponent<Breakable>().Parent = Parent;
+                    restoredVersion.GetComponent<Breakable>().mataCerdos = mataCerdos;
                     m_OnRestore.Invoke(restoredVersion);
                     Destroy(gameObject);
                 }
