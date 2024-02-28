@@ -10,6 +10,8 @@ namespace UnityEngine.XR.Content.Interaction
     public class Unbreakable : MonoBehaviour
     {
         [Serializable] public class RestoreEvent : UnityEvent<GameObject> { }
+        
+        public Transform Parent;
 
         [SerializeField]
         [Tooltip("How long to wait before rewinding the object's motion.")]
@@ -92,7 +94,8 @@ namespace UnityEngine.XR.Content.Interaction
                 if (timePercent > 1.0f)
                 {
                     m_Restored = true;
-                    var restoredVersion = Instantiate(m_RestoredVersion, transform.position, transform.rotation);
+                    var restoredVersion = Instantiate(m_RestoredVersion, transform.position, transform.rotation, Parent);
+                    restoredVersion.GetComponent<Breakable>().Parent = Parent;
                     m_OnRestore.Invoke(restoredVersion);
                     Destroy(gameObject);
                 }

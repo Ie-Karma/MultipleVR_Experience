@@ -10,8 +10,9 @@ namespace UnityEngine.XR.Content.Interaction
     {
         [Serializable] public class BreakEvent : UnityEvent<GameObject, GameObject> { }
 
-        [SerializeField]
-        [Tooltip("The 'broken' version of this object.")]
+        public Transform Parent;
+        
+        [SerializeField] [Tooltip("The 'broken' version of this object.")]
         GameObject m_BrokenVersion;
 
         [SerializeField]
@@ -39,7 +40,8 @@ namespace UnityEngine.XR.Content.Interaction
             if (collision.gameObject.tag.Equals(m_ColliderTag, System.StringComparison.InvariantCultureIgnoreCase))
             {
                 m_Destroyed = true;
-                var brokenVersion = Instantiate(m_BrokenVersion, transform.position, transform.rotation);
+                var brokenVersion = Instantiate(m_BrokenVersion, transform.position, transform.rotation, Parent);
+                brokenVersion.GetComponent<Unbreakable>().Parent = Parent;
                 m_OnBreak.Invoke(collision.gameObject, brokenVersion);
                 Destroy(gameObject);
             }
