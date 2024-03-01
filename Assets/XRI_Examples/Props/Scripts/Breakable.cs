@@ -40,7 +40,6 @@ namespace UnityEngine.XR.Content.Interaction
 
             if (collision.gameObject.tag.Equals(m_ColliderTag, System.StringComparison.InvariantCultureIgnoreCase))
             {
-                
                 m_Destroyed = true;
                 var brokenVersion = Instantiate(m_BrokenVersion, transform.position, transform.rotation, Parent);
                 brokenVersion.GetComponent<Unbreakable>().Parent = Parent;
