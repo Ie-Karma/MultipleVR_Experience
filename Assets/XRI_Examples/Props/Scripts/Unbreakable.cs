@@ -61,63 +61,40 @@ namespace UnityEngine.XR.Content.Interaction
         }
 
         void Update()
+{
+    if (m_Restored)
+        return;
+
+    // Phase 1 - wait to rewind
+    // Phase 2 - (removed)
+    // Phase 3 - replace object, destroy this one
+
+    m_Timer += Time.deltaTime;
+
+    if (m_Resting)
+    {
+        if (m_Timer > m_RestTime)
         {
-            if (m_Restored)
-                return;
+            m_Timer = 0.0f;
+            m_Resting = false;
 
-            // Phase 1 - wait to rewind
-            // Phase 2 - rewind all positions, using a an inverse quadratic curve
-            // Phase 3 - replace object, destroy this one
-
-            m_Timer += Time.deltaTime;
-
-            if (m_Resting)
-            {
-                if (m_Timer > m_RestTime)
-                {
-                    m_Timer = 0.0f;
-                    m_Resting = false;
-
-                    foreach (var child in m_ChildTransforms)
-                    {
-                        if (child == null)
-                            continue;
-
-                        var poses = m_ChildPoses[child];
-                        poses.m_EndPose = new Pose(child.position, child.rotation);
-                        m_ChildPoses[child] = poses;
-                    }
-                }
-            }
-            else
-            {
-                var timePercent = m_Timer / m_RestoreTime;
-                if (timePercent > 1.0f)
-                {
-                    m_Restored = true;
-                    var restoredVersion = Instantiate(m_RestoredVersion, transform.position, transform.rotation, Parent);
-                    restoredVersion.GetComponent<Breakable>().Parent = Parent;
-                    restoredVersion.GetComponent<Breakable>().mataCerdos = mataCerdos;
-                    m_OnRestore.Invoke(restoredVersion);
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    timePercent = 1.0f - ((1.0f - timePercent) * (1.0f - timePercent));
-
-                    foreach (var child in m_ChildTransforms)
-                    {
-                        if (child == null)
-                            continue;
-
-                        var poses = m_ChildPoses[child];
-                        var lerpedPosition = Vector3.Lerp(poses.m_EndPose.position, poses.m_StartPose.position, timePercent);
-                        var lerpedRotation = Quaternion.Slerp(poses.m_EndPose.rotation, poses.m_StartPose.rotation, timePercent);
-                        child.position = lerpedPosition;
-                        child.rotation = lerpedRotation;
-                    }
-                }
-            }
+            // The second phase code has been removed here
         }
+    }
+    else
+    {
+        var timePercent = m_Timer / m_RestoreTime;
+        if (timePercent > 1.0f)
+        {
+            m_Restored = true;
+            var restoredVersion = Instantiate(m_RestoredVersion, Parent.position, Parent.rotation, Parent);
+            restoredVersion.GetComponent<Breakable>().Parent = Parent;
+            restoredVersion.GetComponent<Breakable>().mataCerdos = mataCerdos;
+            restoredVersion.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            m_OnRestore.Invoke(restoredVersion);
+            Destroy(gameObject);
+        }
+    }
+}
     }
 }
