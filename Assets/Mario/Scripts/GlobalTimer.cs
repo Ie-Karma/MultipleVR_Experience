@@ -14,6 +14,7 @@ namespace Mario.Scripts
         private readonly Dictionary<int, bool> _levelCompletion = new Dictionary<int, bool>();
         private TextMeshProUGUI _text;
         private string _bestTime;
+        private bool _hasFinished = false;
         
         private void Awake()
         {
@@ -68,14 +69,14 @@ namespace Mario.Scripts
                 this.transform.LookAt(camTrans.position);
             }
 
-            _elapsedTime = Time.time - _startTime;
+            if(!_hasFinished) _elapsedTime = Time.time - _startTime;
             
             if (!HasFinished()) return;
-            
-            if (PlayerPrefs.GetFloat("TimeScore", 0) > _elapsedTime || PlayerPrefs.GetFloat("TimeScore", 0) == 0)
-            {
-                PlayerPrefs.SetFloat("TimeScore", _elapsedTime);
-            }
+
+            if (!(PlayerPrefs.GetFloat("TimeScore", 0) > _elapsedTime) &&
+                PlayerPrefs.GetFloat("TimeScore", 0) != 0) return;
+            PlayerPrefs.SetFloat("TimeScore", _elapsedTime);
+            _hasFinished = true;
         }
         
         private bool HasFinished()
