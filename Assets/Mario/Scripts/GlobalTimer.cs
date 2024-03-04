@@ -6,6 +6,8 @@ namespace Mario.Scripts
 {
     public class GlobalTimer : MonoBehaviour
     {
+        public static GlobalTimer instance { get; } = new();
+
         private float _startTime;
         private float _elapsedTime;
         private readonly Dictionary<int, bool> _levelCompletion = new Dictionary<int, bool>();
