@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Mario.Scripts
@@ -6,18 +7,23 @@ namespace Mario.Scripts
     {
         private const string TeleportTag = "TeleportFloor";
 
-        private void OnCollisionEnter(Collision other)
+        public void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.CompareTag(TeleportTag)) return;
             TeleportPlayer(other.GetContact(0).point);
         }
-
-        private static void TeleportPlayer(Vector3 hitPosition)
+        public void OnTriggerEnter(Collider other)
+        {
+            if (!other.gameObject.CompareTag(TeleportTag)) return;
+            TeleportPlayer(other.gameObject.transform.position);
+        }
+        private void TeleportPlayer(Vector3 hitPosition)
         {
             if (Camera.main == null) return;
-        
+
             var playerTrans = Camera.main.transform.parent.parent.parent;
-            playerTrans.position = hitPosition;
+            playerTrans.position = new Vector3(hitPosition.x, playerTrans.position.y, hitPosition.z);
+            Destroy(this);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerLaberinto : MonoBehaviour
 {
@@ -27,8 +28,7 @@ public class GameManagerLaberinto : MonoBehaviour
     //Cmabio de escena a MaquinaGancho 1 si se recogen todas las monedas
     public void ChangeScene()
     {
-        //Cambiar escena a MaquinaGancho 1
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MaquinaGancho 1");
+        SceneManager.LoadScene(0);
     }
 
     // Start is called before the first frame update
