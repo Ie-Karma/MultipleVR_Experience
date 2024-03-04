@@ -1,3 +1,4 @@
+using Mario.Scripts;
 using UnityEngine.Events;
 
 namespace UnityEngine.XR.Content.Interaction
@@ -69,6 +70,7 @@ namespace UnityEngine.XR.Content.Interaction
             if (m_WithinThreshold != thresholdCheck)
             {
                 m_WithinThreshold = thresholdCheck;
+                GlobalTimer.instance.SetLevelCompletion(4);
 
                 if (m_WithinThreshold)
                 {

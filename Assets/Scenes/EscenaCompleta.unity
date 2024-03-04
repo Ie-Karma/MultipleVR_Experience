@@ -4387,6 +4387,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6521828497863005347, guid: 982f271f972e7a944942d15df4be8ade, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521828497863005347, guid: 982f271f972e7a944942d15df4be8ade, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521828497863005347, guid: 982f271f972e7a944942d15df4be8ade, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 552684398}
+    - target: {fileID: 6521828497863005347, guid: 982f271f972e7a944942d15df4be8ade, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521828497863005347, guid: 982f271f972e7a944942d15df4be8ade, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLevelCompletion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521828497863005347, guid: 982f271f972e7a944942d15df4be8ade, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Mario.Scripts.GlobalTimer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521828497863005347, guid: 982f271f972e7a944942d15df4be8ade, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521828497863005347, guid: 982f271f972e7a944942d15df4be8ade, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8978011772528799370, guid: 982f271f972e7a944942d15df4be8ade, type: 3}
       propertyPath: m_ActionBeginEvents.Array.size
       value: 0
