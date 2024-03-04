@@ -76,6 +76,7 @@ namespace Mario.Scripts
             if (!(PlayerPrefs.GetFloat("TimeScore", 0) > _elapsedTime) &&
                 PlayerPrefs.GetFloat("TimeScore", 0) != 0) return;
             PlayerPrefs.SetFloat("TimeScore", _elapsedTime);
+            _bestTime = "Best time: " + PlayerPrefs.GetFloat("TimeScore", 0).ToString("F2") + "s";
             _hasFinished = true;
         }
         
