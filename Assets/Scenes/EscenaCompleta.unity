@@ -2317,7 +2317,15 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
+      propertyPath: isMiniCoche
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
       propertyPath: m_OnValueChange.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
@@ -2325,7 +2333,19 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
       propertyPath: m_OnValueChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 552684398}
+    - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 552684398}
     - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
@@ -2333,7 +2353,19 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
       propertyPath: m_OnValueChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLevelCompletion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetLevelCompletion
       objectReference: {fileID: 0}
     - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
@@ -2341,11 +2373,23 @@ PrefabInstance:
       value: Mario.Scripts.GlobalTimer, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Mario.Scripts.GlobalTimer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
       propertyPath: m_OnValueChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
       propertyPath: m_OnValueChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136926524046682023, guid: d711a52949af31745a57f15c3294b096, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1249820099937932395, guid: d711a52949af31745a57f15c3294b096, type: 3}
@@ -3409,6 +3453,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 552684398}
+        m_TargetAssemblyTypeName: Mario.Scripts.GlobalTimer, Assembly-CSharp
+        m_MethodName: SetLevelCompletion
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

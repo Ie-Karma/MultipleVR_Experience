@@ -1,4 +1,5 @@
 using System;
+using Mario.Scripts;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -32,6 +33,7 @@ namespace UnityEngine.XR.Content.Interaction
         [SerializeField]
         [Tooltip("Events to trigger when the slider is moved")]
         ValueChangeEvent m_OnValueChange = new ValueChangeEvent();
+        public bool isMiniCoche = false;
 
         IXRSelectInteractor m_Interactor;
 
@@ -76,6 +78,8 @@ namespace UnityEngine.XR.Content.Interaction
         void StartGrab(SelectEnterEventArgs args)
         {
             m_Interactor = args.interactorObject;
+            var level = isMiniCoche ? 1 : 2;
+            GlobalTimer.instance.SetLevelCompletion(level);
             UpdateSliderPosition();
         }
 

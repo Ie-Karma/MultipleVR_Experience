@@ -1,3 +1,5 @@
+using Mario.Scripts;
+
 namespace UnityEngine.XR.Content.Interaction
 {
     /// <summary>
@@ -44,6 +46,7 @@ namespace UnityEngine.XR.Content.Interaction
         /// <param name="active">Value of <see langword="true"/> to activate the machine; <see langword="false"/> otherwise.</param>
         public void SetMachineActive(bool active)
         {
+            GlobalTimer.instance.SetLevelCompletion(5);
             // It's the same state?
             if (active == m_MachineActive)
                 return;
