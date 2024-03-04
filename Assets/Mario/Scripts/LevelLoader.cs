@@ -9,7 +9,8 @@ namespace Mario.Scripts
         public void LoadLevel(int levelIndex)
         {
             SceneManager.LoadScene(levelIndex);
+            GlobalTimer.instance.SetLevelCompletion(levelIndex);
         }
-    
+        
     }
 }
