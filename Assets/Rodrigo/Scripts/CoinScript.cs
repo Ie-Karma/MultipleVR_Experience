@@ -37,7 +37,6 @@ public class CoinScript : MonoBehaviour
         //Cambiar clip al path "Assets/Rodrigo/audio/collectcoin-6075.mp3"
         audio.clip = Resources.Load<AudioClip>("audio/collectcoin-6075");
 
-
         audio.Play();
         Destroy(gameObject, audio.clip.length);
     }

@@ -1,4 +1,5 @@
 using System;
+using Mario.Scripts;
 using UnityEngine.Events;
 
 namespace UnityEngine.XR.Content.Animation
@@ -25,6 +26,7 @@ namespace UnityEngine.XR.Content.Animation
         /// <inheritdoc />
         public void ActionBegin(string label)
         {
+            GlobalTimer.instance.SetLevelCompletion(4);
             if (m_ActionBeginEvents == null)
                 return;
 

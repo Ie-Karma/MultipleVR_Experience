@@ -438,6 +438,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4550310140529330243, guid: 3679ff0c627d5e14983e431628b01a75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550310140529330243, guid: 3679ff0c627d5e14983e431628b01a75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550310140529330243, guid: 3679ff0c627d5e14983e431628b01a75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 934732979}
+    - target: {fileID: 4550310140529330243, guid: 3679ff0c627d5e14983e431628b01a75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550310140529330243, guid: 3679ff0c627d5e14983e431628b01a75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetCompletedLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550310140529330243, guid: 3679ff0c627d5e14983e431628b01a75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Mario.Scripts.LevelLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550310140529330243, guid: 3679ff0c627d5e14983e431628b01a75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550310140529330243, guid: 3679ff0c627d5e14983e431628b01a75, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5099161952745364804, guid: 3679ff0c627d5e14983e431628b01a75, type: 3}
       propertyPath: m_Name
       value: DeliveryVan_good
@@ -512,6 +544,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3679ff0c627d5e14983e431628b01a75, type: 3}
+--- !u!114 &934732979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8158618210421993133, guid: 3679ff0c627d5e14983e431628b01a75, type: 3}
+  m_PrefabInstance: {fileID: 934732978}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87455574b9a2d3841aa002414e4aa800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &986552771 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -336020456008204387, guid: cccd84ca4b0f1ac4993e340b78eeae4f, type: 3}

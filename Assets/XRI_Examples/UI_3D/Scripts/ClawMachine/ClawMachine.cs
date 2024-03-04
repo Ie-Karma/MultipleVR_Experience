@@ -1,4 +1,5 @@
 using System.Collections;
+using Mario.Scripts;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace UnityEngine.XR.Content.Interaction
@@ -133,6 +134,7 @@ namespace UnityEngine.XR.Content.Interaction
         public void OnButtonPress()
         {
             m_ButtonPressed = true;
+            GlobalTimer.instance.SetLevelCompletion(6);
         }
 
         /// <summary>

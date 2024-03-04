@@ -1,70 +1,78 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using Mario.Scripts;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class MataCerdos : MonoBehaviour
+namespace David.Scripts
 {
-    public List<Animator> Porcos;
-    private string trigger = "Salir";
-    public float totalTime = 30.0f;
-    public float elapsedTime = 0.0f;
-    public float initialWaitTime = 1.5f;
-    public float finalWaitTime = 0.5f;
-    private float currentWaitTime;
-    private float timer;
-
-    public int score = 0;
-    public TextMeshProUGUI scoreText;
-
-    private bool isGameActive = false;
-
-    public void AddScore()
+    public class MataCerdos : MonoBehaviour
     {
-        score++;
-    }
+        public List<Animator> Porcos;
+        private string trigger = "Salir";
+        public float totalTime = 30.0f;
+        public float elapsedTime = 0.0f;
+        public float initialWaitTime = 1.5f;
+        public float finalWaitTime = 0.5f;
+        private float currentWaitTime;
+        private float timer;
 
-    private void Start()
-    {
-        currentWaitTime = initialWaitTime;
-        timer = currentWaitTime;
-    }
+        public int score = 0;
+        public TextMeshProUGUI scoreText;
 
-    public void StartGame()
-    {
-        score = 0;
-        elapsedTime = 0;
-        isGameActive = true;
-    }
+        private bool isGameActive = false;
 
-    private void Update()
-    {
-        if (!isGameActive)
-            return;
-
-        elapsedTime += Time.deltaTime;
-        timer -= Time.deltaTime;
-
-        if (timer <= 0)
+        public void AddScore()
         {
-            if (Porcos.Count > 0)
-            {
-                int randomIndex = Random.Range(0, Porcos.Count);
-                Animator randomPorco = Porcos[randomIndex];
-                randomPorco.SetTrigger(trigger);
-            }
+            score++;
+        
+            if (score <= 5) return;
+        
+            scoreText.text = "You win!";
+            isGameActive = false;
+            GlobalTimer.instance.SetLevelCompletion(3);
+        }
 
-            currentWaitTime = Mathf.Lerp(initialWaitTime, finalWaitTime, elapsedTime / totalTime);
+        private void Start()
+        {
+            currentWaitTime = initialWaitTime;
             timer = currentWaitTime;
         }
 
-        scoreText.text = "Time: " + (totalTime - elapsedTime) + "\n" + "Score: " + score;
-
-        if (elapsedTime >= totalTime)
+        public void StartGame()
         {
-            isGameActive = false;
+            score = 0;
+            elapsedTime = 0;
+            isGameActive = true;
+        }
+
+        private void Update()
+        {
+            if (!isGameActive)
+                return;
+
+            elapsedTime += Time.deltaTime;
+            timer -= Time.deltaTime;
+
+            if (timer <= 0)
+            {
+                if (Porcos.Count > 0)
+                {
+                    int randomIndex = Random.Range(0, Porcos.Count);
+                    Animator randomPorco = Porcos[randomIndex];
+                    randomPorco.SetTrigger(trigger);
+                }
+
+                currentWaitTime = Mathf.Lerp(initialWaitTime, finalWaitTime, elapsedTime / totalTime);
+                timer = currentWaitTime;
+            }
+
+            scoreText.text = "Time: " + (totalTime - elapsedTime) + "\n" + "Score: " + score;
+
+            if (elapsedTime >= totalTime)
+            {
+                isGameActive = false;
+            }
         }
     }
 }

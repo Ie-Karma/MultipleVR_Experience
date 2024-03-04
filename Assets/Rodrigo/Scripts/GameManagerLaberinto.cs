@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Mario.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -42,10 +43,10 @@ public class GameManagerLaberinto : MonoBehaviour
     void Update()
     {
         //Si se recogen todas las monedas, cambiar de escena
-        if (coins == maxCoins)
-        {
-            ChangeScene();
-        }
+        if (coins != maxCoins) return;
         
+        GlobalTimer.instance.SetLevelCompletion(8);
+        ChangeScene();
+
     }
 }

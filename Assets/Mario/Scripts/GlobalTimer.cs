@@ -1,21 +1,38 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 namespace Mario.Scripts
 {
     public class GlobalTimer : MonoBehaviour
     {
-        public static GlobalTimer instance { get; } = new();
+        public static GlobalTimer instance { get; private set; }
 
         private float _startTime;
         private float _elapsedTime;
         private readonly Dictionary<int, bool> _levelCompletion = new Dictionary<int, bool>();
-
+        private TextMeshProUGUI _text;
+        private string _bestTime;
+        
+        private void Awake()
+        {
+            if (instance != null && instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                instance = this;
+                DontDestroyOnLoad(this.gameObject);
+            }
+        }
         private void Start()
         {
             _startTime = Time.time;
             DontDestroyOnLoad(gameObject);
+            _text = GetComponentInChildren<TextMeshProUGUI>();
+            _bestTime = "Best time: " + PlayerPrefs.GetFloat("TimeScore", 0).ToString("F2") + "s";
             
             // Pistola
             _levelCompletion.Add(0, false);
@@ -35,11 +52,22 @@ namespace Mario.Scripts
             _levelCompletion.Add(7, false);
             // Laberinto
             _levelCompletion.Add(8, false);
+            
 
         }
 
         private void Update()
         {
+            var levelIndex = _levelCompletion.Count(level => level.Value);
+            var actualLevelText = "Actual time: " + _elapsedTime.ToString("F2") + "s";
+            _text.text = actualLevelText + "\n" + _bestTime + "\n" + "Levels completed: " + levelIndex + "/9";
+            if (Camera.main != null)
+            {
+                var camTrans = Camera.main.transform;
+                this.transform.position = new Vector3(camTrans.position.x, camTrans.position.y + 15, camTrans.position.z);
+                this.transform.LookAt(camTrans.position);
+            }
+
             _elapsedTime = Time.time - _startTime;
             
             if (!HasFinished()) return;
