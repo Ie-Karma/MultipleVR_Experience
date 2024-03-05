@@ -2,24 +2,16 @@ using System.Collections.Generic;
 
 namespace UnityEngine.XR.Content.Interaction
 {
-    /// <summary>
-    /// This class applies an abduction force in all rigidbodies inside the trigger collider.
-    /// A list is used to store all rigidbodies inside the trigger; the force is applied in
-    /// the FixedUpdate. The force magnitude is calculated using the pressure value of the <c>XRPushButton</c>
-    /// <seealso cref="XRPushButton"/>
-    /// </summary>
+
     public class UfoAbductionForce : MonoBehaviour
     {
         [SerializeField]
-        [Tooltip("The minimum magnitude of the abduction force")]
         float m_MinForceMagnitude;
 
         [SerializeField]
-        [Tooltip("The maximum magnitude of the abduction force")]
         float m_MaxForceMagnitude;
 
         [SerializeField]
-        [Tooltip("All rigidbodies inside this trigger will receive the abduction force.")]
         Collider m_Trigger;
 
         float m_ButtonValue;
@@ -63,10 +55,6 @@ namespace UnityEngine.XR.Content.Interaction
                 m_Rigidbodies.Remove(otherRigidbody);
         }
 
-        /// <summary>
-        /// Gets the current button value. Called by the <c>XRPushButton.OnValueChange</c> event.
-        /// </summary>
-        /// <param name="value">The current button value</param>
         public void OnButtonValueChange(float value)
         {
             m_ButtonValue = value;
